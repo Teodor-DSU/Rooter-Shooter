@@ -87,7 +87,6 @@ public class PlayerController : MonoBehaviour
         {
             yield return new WaitForSeconds(reverseBloodLossRate);
             currentBlood--;
-            Debug.Log("drip, drip");
         }
 
         StartCoroutine(SlowlyDying());
