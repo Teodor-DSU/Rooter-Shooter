@@ -9,6 +9,8 @@ public class ShootSource : MonoBehaviour
 {
     [SerializeField] private UnityEvent shake;
     [SerializeField] private VoidEventChannelSO playerjumped;
+    [SerializeField] private VoidEventChannelSO justShot;
+    [SerializeField] private VoidEventChannelSO canShootAgain;
     [SerializeField] private FloatEventChannelSO shootEventLoseBlood;
     [SerializeField] private ParticleSystem shootBloodSplatterEffect;
     [SerializeField] private GameObject seed;
@@ -50,6 +52,7 @@ public class ShootSource : MonoBehaviour
         shootBloodSplatterEffect.Play();
         yield return new WaitForSeconds(cooldown);
         canFire = true;
+        canShootAgain.RaiseEvent();
     }
 
     public void ShootSeed()
@@ -62,6 +65,7 @@ public class ShootSource : MonoBehaviour
         Instantiate(Seed, muzzle.transform.position, transform.rotation);
         shake.Invoke();
         shootEventLoseBlood.RaiseEvent(shotBloodCost);
+        justShot.RaiseEvent();
     }
 
     private void DisableSelf()

@@ -424,6 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpSeed: {fileID: 1319541634061971978, guid: e872d30da7e21a14aa8ac56032daa767, type: 3}
   PlayerJumped: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
+  JustShot: {fileID: 11400000, guid: 726ae223f8516ea4f970ecc9c2b3bbb8, type: 2}
 --- !u!114 &198872949295423701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +453,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   playerjumped: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
+  justShot: {fileID: 11400000, guid: 726ae223f8516ea4f970ecc9c2b3bbb8, type: 2}
+  canShootAgain: {fileID: 11400000, guid: ffd329a73be4d5d4aa173929b668a6d1, type: 2}
   shootEventLoseBlood: {fileID: 11400000, guid: 5811bd081c7ff35448bf9457f859f43d, type: 2}
   shootBloodSplatterEffect: {fileID: 5114954983906158726}
   seed: {fileID: 4010482218315918602, guid: 6c8db71cb4e4ff947920b22708dd095d, type: 3}

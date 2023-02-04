@@ -1779,6 +1779,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1343097952}
+  - component: {fileID: 1343097953}
   m_Layer: 5
   m_Name: EyeCooldown
   m_TagString: Untagged
@@ -1808,6 +1809,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1343097953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343097951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9a6da552f4b1e49848914be27a54e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  justShot: {fileID: 11400000, guid: 726ae223f8516ea4f970ecc9c2b3bbb8, type: 2}
+  canShootAgain: {fileID: 11400000, guid: ffd329a73be4d5d4aa173929b668a6d1, type: 2}
+  gotNewHost: {fileID: 11400000, guid: 9cb465cbf5d58a54a92f152410ce332e, type: 2}
+  openEye: {fileID: 1771128604}
+  closedEye: {fileID: 1104721471}
 --- !u!1 &1348922414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2491,7 +2509,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095117600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.018587528, y: 0.059934832, z: 0.030457884}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
