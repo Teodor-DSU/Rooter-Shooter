@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ShootSource : MonoBehaviour
 {
+    [SerializeField] private VoidEventChannelSO playerjumped;
+    [SerializeField] private ParticleSystem shootBlood;
     [SerializeField] private GameObject seed;
     [SerializeField] private Transform muzzle;
     [SerializeField] private int seedsPerShot = 1;
@@ -13,7 +17,17 @@ public class ShootSource : MonoBehaviour
     [SerializeField] private float cooldown = 0.4f;
 
     private bool canFire = true;
-    
+
+    private void OnEnable()
+    {
+        playerjumped.OnEventRaised += DisableSelf;
+    }
+
+    private void OnDisable()
+    {
+        playerjumped.OnEventRaised -= DisableSelf;
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && canFire && ammunition > 0)
@@ -40,8 +54,13 @@ public class ShootSource : MonoBehaviour
              Instantiate(Seed, muzzle.transform.position, transform.rotation);
             yield return new WaitForSeconds(delayBetweenSeeds);
         }
-
+        shootBlood.Play();
         yield return new WaitForSeconds(cooldown);
         canFire = true;
+    }
+
+    private void DisableSelf()
+    {
+        enabled = false;
     }
 }

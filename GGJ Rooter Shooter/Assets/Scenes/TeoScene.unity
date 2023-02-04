@@ -1544,21 +1544,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 198872948429819771, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
-      propertyPath: PlayerJumped
-      value: 
-      objectReference: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
     - target: {fileID: 198872948429819774, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 198872949295423706, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
-      propertyPath: mainCam
-      value: 
-      objectReference: {fileID: 61921051}
-    - target: {fileID: 198872949295423706, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
-      propertyPath: PlayerJumped
-      value: 
-      objectReference: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}

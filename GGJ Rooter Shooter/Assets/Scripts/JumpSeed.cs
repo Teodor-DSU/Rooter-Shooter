@@ -11,7 +11,7 @@ public class JumpSeed : MonoBehaviour
 
     public static Transform Enemies = null;
 
-    public Transform PlayerPrefab;
+    public GameObject PlayerPrefab;
     
     [SerializeField]
     private Vector2 Limits = new Vector2(5.0f, 10.0f);
@@ -44,11 +44,11 @@ public class JumpSeed : MonoBehaviour
         Destroy(gameObject);
         Destroy(collision.gameObject);
 
-        Transform player = Instantiate(PlayerPrefab, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+        GameObject player = Instantiate(PlayerPrefab, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
         PlayerController.ActivePlayer = player;
         
         CinemachineVirtualCamera cinemachine = Camera.main.GetComponentInChildren<CinemachineVirtualCamera>();
-        cinemachine.Follow = player;
+        cinemachine.Follow = player.transform;
         
         //TODO(Vasilis): Start rooting animation
         
