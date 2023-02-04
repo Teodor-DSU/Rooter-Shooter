@@ -7,11 +7,21 @@ using UnityEngine;
 public class JumpSeed : MonoBehaviour
 {
     private static int EnemiesLayer = 7;
+
+    public static Transform Enemies = null;
+
+    public Transform PlayerPrefab;
     
     [SerializeField]
     private Vector2 Limits = new Vector2(5.0f, 10.0f);
     private Vector3 direction;
     private float power;
+
+    private void Start()
+    {
+        if (!Enemies)
+            Enemies = GameObject.Find("Enemies").transform;
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -27,13 +37,20 @@ public class JumpSeed : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.layer);
         if (collision.gameObject.layer != EnemiesLayer)
             return;
         
         Destroy(gameObject);
         Destroy(collision.gameObject);
-        
+
+        Transform player = Instantiate(PlayerPrefab, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+        PlayerController.ActivePlayer = player;
         //TODO(Vasilis): Start rooting animation
+        
+        foreach (Transform enemy in Enemies)
+        {
+            MoveTowardsPlayer chase = enemy.GetComponent<MoveTowardsPlayer>();
+            chase.ChangeChaseTarget(player);
+        }
     }
 }

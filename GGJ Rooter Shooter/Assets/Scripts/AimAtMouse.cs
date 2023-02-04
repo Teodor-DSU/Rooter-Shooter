@@ -9,7 +9,6 @@ public class AimAtMouse : MonoBehaviour
 
     [SerializeField] private VoidEventChannelSO PlayerJumped;
     
-    [SerializeField]
     private Camera mainCam;
 
     private Vector3 mousePos;
@@ -20,6 +19,7 @@ public class AimAtMouse : MonoBehaviour
     private void Start()
     {
         lineRenderer = transform.GetComponentInChildren<LineRenderer>();
+        mainCam = Camera.main;
     }
 
     void Update()

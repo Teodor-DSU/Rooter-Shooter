@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6df0e4045e6734685470c668679404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerJumped: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
   speed: 5
 --- !u!50 &198872948429819765
 Rigidbody2D:
@@ -412,8 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpSeed: {fileID: 1319541634061971978, guid: e872d30da7e21a14aa8ac56032daa767, type: 3}
-  mainCam: {fileID: 0}
-  LineLength: 2
+  PlayerJumped: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
 --- !u!114 &198872949295423701
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,32 +8,26 @@ public class MoveTowardsPlayer : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private VoidEventChannelSO playerJumped;
     
-    private GameObject player;
+    private Transform player = null;
     private Vector3 direction;
     
     void Start()
     {
-        ChangeChaseTarget();
-    }
-
-    private void OnEnable()
-    {
-        playerJumped.OnEventRaised += ChangeChaseTarget;
-    }
-
-    private void OnDisable()
-    {
-        playerJumped.OnEventRaised -= ChangeChaseTarget;
+        player = PlayerController.ActivePlayer;
+        //ChangeChaseTarget();
     }
 
     void FixedUpdate()
     {
-        direction = (player.transform.position - transform.position).normalized;
-        transform.position += direction * (speed * Time.deltaTime);
+        if (player)
+        {
+            direction = (player.position - transform.position).normalized;
+            transform.position += direction * (speed * Time.deltaTime);
+        }
     }
 
-    private void ChangeChaseTarget()
+    public void ChangeChaseTarget(Transform target)
     {
-        player = GameObject.FindWithTag("Player");
+        player = target;
     }
 }

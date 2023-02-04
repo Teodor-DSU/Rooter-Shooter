@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c4f62308b16f54ab39b5746dce3c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerPrefab: {fileID: 198872948429819768, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
   Limits: {x: 4, y: 7}
 --- !u!50 &2819810451975333790
 Rigidbody2D:

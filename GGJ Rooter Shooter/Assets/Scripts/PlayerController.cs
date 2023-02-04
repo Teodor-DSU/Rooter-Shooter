@@ -8,6 +8,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private VoidEventChannelSO PlayerJumped;
 
     [SerializeField] private float speed = 5f;
+
+    public static Transform ActivePlayer = null;
+
+    private void Awake()
+    {
+        if (!ActivePlayer)
+            ActivePlayer = transform;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
