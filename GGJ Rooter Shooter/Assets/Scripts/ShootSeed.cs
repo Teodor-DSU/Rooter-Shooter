@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShootSeed : MonoBehaviour
 {
+    [SerializeField] private UnityEvent shake;
     [SerializeField] private float speed = 5f;
     [SerializeField] private int damage = 2;
     [SerializeField] private float lifetime = 3f;
