@@ -17,16 +17,13 @@ public class ScrollTexture : MonoBehaviour
     void Start()
     {
         sprite = transform.GetComponent<SpriteRenderer>();
-        oldPosition = PlayerController.ActivePlayer.position.y;
-        float aux = Random.Range(0.0f, 1120.0f);
-        Debug.Log(aux);
-        sprite.material.mainTextureOffset = new Vector2(aux, 0.0f);
+        oldPosition = PlayerController.ActivePlayer.position.x;
         cam = Camera.main;
     }
 
     private void FixedUpdate()
     {
-        float posY = PlayerController.ActivePlayer.position.y;
+        float posY = PlayerController.ActivePlayer.position.x;
         float offset =  posY - oldPosition;
         sprite.material.mainTextureOffset += new Vector2(Speed * offset, 0.0f) * Time.deltaTime;
         oldPosition = posY;
