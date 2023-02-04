@@ -34,7 +34,7 @@ public class ShootSeed : MonoBehaviour
         if (col.TryGetComponent(out Enemy e))
         {
             e.LoseHealth(damage);
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

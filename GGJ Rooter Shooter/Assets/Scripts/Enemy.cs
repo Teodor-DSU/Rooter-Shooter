@@ -5,10 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int health = 10;
+
+    private MoveTowardsPlayer moveScript;
     
     void Start()
     {
-        
+        moveScript = GetComponent<MoveTowardsPlayer>();
     }
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Debug.Log("Aarg, I'm defeated!");
+            moveScript.enabled = false;
         }
     }
 }

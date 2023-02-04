@@ -6,31 +6,31 @@ public class ShootSource : MonoBehaviour
 {
     [SerializeField] private GameObject seed;
     [SerializeField] private Transform muzzle;
-    [SerializeField] private int seedAmount = 1;
+    [SerializeField] private int seedsPerShot = 1;
+    [SerializeField] private int ammunition = 10;
     [SerializeField] private float spread = 0f;
     [SerializeField] private float delayBetweenSeeds = 0f;
     [SerializeField] private float cooldown = 0.4f;
 
     private bool canFire = true;
     
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canFire)
+        if (Input.GetMouseButtonDown(0) && canFire && ammunition > 0)
         {
             StartCoroutine(Fire());
+        }
+        else if (Input.GetMouseButtonDown(0) && ammunition > 0)
+        {
+            Debug.Log("Outta juice");
         }
     }
 
     private IEnumerator Fire()
     {
+        ammunition--;
         canFire = false;
-        for (int i = 0; i < seedAmount; i++)
+        for (int i = 0; i < seedsPerShot; i++)
         {
             GameObject Seed = seed;
              var randSpreadX = Random.Range(-spread, spread);

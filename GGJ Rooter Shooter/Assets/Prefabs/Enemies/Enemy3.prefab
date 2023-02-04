@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5433946153294128989}
   - component: {fileID: 7916968069910170659}
   - component: {fileID: 70612414324988496}
+  - component: {fileID: -3001556812729743941}
   m_Layer: 7
   m_Name: Enemy3
   m_TagString: Untagged
@@ -148,3 +149,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   playerJumped: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
+--- !u!114 &-3001556812729743941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3052936206778641923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dee5e25b6295945bf52d13d5ac20cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
