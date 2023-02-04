@@ -12,12 +12,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float fadeAwayTime = 3f;
 
-    public static GameObject ActivePlayer = null;
+    public static Transform ActivePlayer = null;
 
     private void Awake()
     {
         if (!ActivePlayer)
-            ActivePlayer = this.gameObject;
+            ActivePlayer = transform;
     }
 
     // Start is called before the first frame update
