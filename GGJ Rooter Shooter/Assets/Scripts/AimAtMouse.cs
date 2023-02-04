@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class AimAtMouse : MonoBehaviour
 {
+    [SerializeField]
     private Camera mainCam;
     private Vector3 mousePos;
 
     private void Start()
     {
-        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
     }
 
     void Update()
