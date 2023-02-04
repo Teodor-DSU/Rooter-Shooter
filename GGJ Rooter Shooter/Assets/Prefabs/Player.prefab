@@ -191,6 +191,7 @@ MonoBehaviour:
   speed: 5
   explodesOnDeath: 0
   explosion: {fileID: 7121746451339064168, guid: 13346118b6f1c7f4bb477c7ac41eb183, type: 3}
+  bloodSplatter: {fileID: 4782479230443389977, guid: 58a80ca57084142408974088ef14cb2a, type: 3}
   maxBloodTank: 100
   currentBlood: 0
   reverseBloodLossRate: 0.1

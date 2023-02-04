@@ -162,3 +162,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  damage: 20
+  loseBlood: {fileID: 11400000, guid: 5811bd081c7ff35448bf9457f859f43d, type: 2}

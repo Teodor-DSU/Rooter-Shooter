@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private bool explodesOnDeath = false;
     [SerializeField] private GameObject explosion;
+    [SerializeField] private GameObject bloodSplatter;
     public float maxBloodTank = 100;
     [HideInInspector] public float currentBlood;
     [SerializeField] private float reverseBloodLossRate = 0.5f;
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
+        Instantiate(bloodSplatter, transform.position, transform.rotation);
         if (explodesOnDeath)
         {
             Instantiate(explosion, transform.position, transform.rotation);
