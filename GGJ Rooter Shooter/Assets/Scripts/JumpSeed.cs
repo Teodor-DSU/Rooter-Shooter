@@ -8,14 +8,15 @@ using UnityEngine;
 public class JumpSeed : MonoBehaviour
 {
     private static int EnemiesLayer = 7;
-
-
+    
     public Transform PlayerPrefab;
     
     [SerializeField]
     private Vector2 Limits = new Vector2(5.0f, 10.0f);
     private Vector3 direction;
     private float power;
+
+    private bool hasSpawned = false;
 
     private void Start()
     {
@@ -28,6 +29,18 @@ public class JumpSeed : MonoBehaviour
         transform.position += power * Time.fixedDeltaTime * direction;
     }
 
+    private void Update()
+    {
+        if (power > 0)
+        {
+            power -= Time.deltaTime;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void SetDirection(Vector3 dir, float pow)
     {
         direction = dir;
@@ -36,24 +49,28 @@ public class JumpSeed : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer != EnemiesLayer)
-            return;
-        
-        Destroy(gameObject);
-        Destroy(collision.gameObject);
-
-        Transform player = Instantiate(PlayerPrefab, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-        PlayerController.ActivePlayer = player;
-        
-        CinemachineVirtualCamera cinemachine = Camera.main.GetComponentInChildren<CinemachineVirtualCamera>();
-        cinemachine.Follow = player;
-        
-        //TODO(Vasilis): Start rooting animation
-        
-        foreach (Transform enemy in MoveTowardsPlayer.Enemies)
+        if (collision.gameObject.TryGetComponent(out Enemy enemyScript))
         {
-            MoveTowardsPlayer chase = enemy.GetComponent<MoveTowardsPlayer>();
-            chase.ChangeChaseTarget(player);
+            if (enemyScript.controllable && !hasSpawned)
+            {
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
+        
+                Transform player = Instantiate(PlayerPrefab, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+                PlayerController.ActivePlayer = player;
+                hasSpawned = true;
+                
+                CinemachineVirtualCamera cinemachine = Camera.main.GetComponentInChildren<CinemachineVirtualCamera>();
+                cinemachine.Follow = player;
+                
+                //TODO(Vasilis): Start rooting animation
+                
+                foreach (Transform enemy in MoveTowardsPlayer.Enemies)
+                {
+                    MoveTowardsPlayer chase = enemy.GetComponent<MoveTowardsPlayer>();
+                    chase.ChangeChaseTarget(player);
+                }
+            }
         }
     }
 }

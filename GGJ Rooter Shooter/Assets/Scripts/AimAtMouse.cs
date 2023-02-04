@@ -2,9 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AimAtMouse : MonoBehaviour
 {
+    [SerializeField] private UnityEvent shake;
+    
     public Transform JumpSeed;
 
     [SerializeField] private VoidEventChannelSO PlayerJumped;
@@ -42,6 +45,7 @@ public class AimAtMouse : MonoBehaviour
             script.SetDirection(jumpDir.normalized, jumpPower);
             PlayerJumped.RaiseEvent();
             JustShot.RaiseEvent();
+            shake.Invoke();
         }
         else if (Input.GetButton("Fire2"))
             ShowJumpAim();
