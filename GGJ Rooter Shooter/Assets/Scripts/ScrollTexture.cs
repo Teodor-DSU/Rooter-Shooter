@@ -11,28 +11,38 @@ public class ScrollTexture : MonoBehaviour
     private SpriteRenderer sprite;
 
     private float oldPosition;
-    private Camera cam;
-    
+
+    private Transform camera;
+    private Vector3 travelDistance = new Vector3(47.05f, 0.0f, 0.0f);
+
     // Start is called before the first frame update
     void Start()
     {
         sprite = transform.GetComponent<SpriteRenderer>();
         oldPosition = PlayerController.ActivePlayer.position.x;
-        cam = Camera.main;
+        camera = Camera.main.transform;
     }
 
     private void FixedUpdate()
     {
-        float posY = PlayerController.ActivePlayer.position.x;
-        float offset =  posY - oldPosition;
+        float posX = PlayerController.ActivePlayer.position.x;
+        float offset = posX - oldPosition;
         sprite.material.mainTextureOffset += new Vector2(Speed * offset, 0.0f) * Time.deltaTime;
-        oldPosition = posY;
-        transform.position = new Vector3(transform.position.x, cam.transform.position.y, 0.0f);
+        oldPosition = posX;
+
+        float dist = QuickDistance(camera.position, transform.position);
+        if (dist >= 20.0f)
+            transform.position += travelDistance;
+        else if (dist <= -20.0f)
+            transform.position -= travelDistance;
+        //transform.position = new Vector3(camera.position.x + offsetX, transform.position.y, 0.0f);
     }
 
+    private float QuickDistance(Vector3 pos0, Vector3 pos1) { return pos0.x - pos1.x; }
+    
     // Update is called once per frame
     void Update()
     {
-        
+        //-15.45 to 31.6
     }
 }
