@@ -12,13 +12,17 @@ public class MoveTowardsPlayer : MonoBehaviour
     private Vector3 direction;
     
     public static Transform Enemies = null;
-    
+
+    private void Awake()
+    {
+        if (!Enemies)
+            Enemies = GameObject.Find("Enemies").transform;
+    }
+
     void Start()
     {
         player = PlayerController.ActivePlayer;
         //ChangeChaseTarget();
-        if (!Enemies)
-            Enemies = GameObject.Find("Enemies").transform;
     }
 
     void FixedUpdate()
