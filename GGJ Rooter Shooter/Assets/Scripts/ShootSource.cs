@@ -9,11 +9,12 @@ public class ShootSource : MonoBehaviour
 {
     [SerializeField] private UnityEvent shake;
     [SerializeField] private VoidEventChannelSO playerjumped;
-    [SerializeField] private ParticleSystem shootBlood;
+    [SerializeField] private FloatEventChannelSO shootEventLoseBlood;
+    [SerializeField] private ParticleSystem shootBloodSplatterEffect;
     [SerializeField] private GameObject seed;
     [SerializeField] private Transform muzzle;
     [SerializeField] private int seedsPerShot = 1;
-    [SerializeField] private int ammunition = 10;
+    [SerializeField] private float shotBloodCost = 10;
     [SerializeField] private float spread = 0f;
     [SerializeField] private float delayBetweenSeeds = 0f;
     [SerializeField] private float cooldown = 0.4f;
@@ -32,26 +33,21 @@ public class ShootSource : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canFire && ammunition > 0)
+        if (Input.GetMouseButtonDown(0) && canFire)
         {
             StartCoroutine(Fire());
-        }
-        else if (Input.GetMouseButtonDown(0) && ammunition > 0)
-        {
-            Debug.Log("Outta juice");
         }
     }
 
     private IEnumerator Fire()
     {
-        ammunition--;
         canFire = false;
         for (int i = 0; i < seedsPerShot; i++)
         {
             ShootSeed();
             yield return new WaitForSeconds(delayBetweenSeeds);
         }
-        shootBlood.Play();
+        shootBloodSplatterEffect.Play();
         yield return new WaitForSeconds(cooldown);
         canFire = true;
     }
@@ -65,6 +61,7 @@ public class ShootSource : MonoBehaviour
             transform.right.y + randSpreadY, 0f);
         Instantiate(Seed, muzzle.transform.position, transform.rotation);
         shake.Invoke();
+        shootEventLoseBlood.RaiseEvent(shotBloodCost);
     }
 
     private void DisableSelf()

@@ -6,11 +6,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private VoidEventChannelSO PlayerJumped;
+    [SerializeField] private VoidEventChannelSO GotNewHost;
+    [SerializeField] private FloatEventChannelSO LostBlood;
+    [SerializeField] private float speed = 5f;
     [SerializeField] private bool explodesOnDeath = false;
     [SerializeField] private GameObject explosion;
-
-    [SerializeField] private float speed = 5f;
+    public float maxBloodTank = 100;
+    [HideInInspector] public float currentBlood;
+    [SerializeField] private float reverseBloodLossRate = 0.5f;
     [SerializeField] private float fadeAwayTime = 3f;
+    [SerializeField] private float outOfBloodLastChanceTime = 5f;
 
     public static Transform ActivePlayer = null;
 
@@ -20,20 +25,23 @@ public class PlayerController : MonoBehaviour
             ActivePlayer = transform;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        currentBlood = maxBloodTank;
+        StartCoroutine(BleedOut());
+        GotNewHost.RaiseEvent();
     }
 
     private void OnEnable()
     {
         PlayerJumped.OnEventRaised += TurnOff;
+        LostBlood.OnEventRaised += LoseBlood;
     }
 
     private void OnDisable()
     {
         PlayerJumped.OnEventRaised -= TurnOff;
+        LostBlood.OnEventRaised -= LoseBlood;
     }
 
     private void OnDestroy()
@@ -65,5 +73,28 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(fadeAwayTime);
         Destroy(gameObject);
+    }
+
+    private void LoseBlood(float value)
+    {
+        currentBlood -= value;
+    }
+    
+    private IEnumerator BleedOut()
+    {
+        while (currentBlood > 0f)
+        {
+            yield return new WaitForSeconds(reverseBloodLossRate);
+            currentBlood--;
+            Debug.Log("drip, drip");
+        }
+
+        StartCoroutine(SlowlyDying());
+    }
+
+    private IEnumerator SlowlyDying()
+    {
+        yield return new WaitForSeconds(outOfBloodLastChanceTime);
+        Debug.Log("You loose");
     }
 }
