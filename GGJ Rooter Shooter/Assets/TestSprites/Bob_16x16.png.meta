@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -169,6 +169,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Bob_16x16_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 96
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90af4d5770cf73c4c9215b14b4fb201c
+      internalID: 1647417493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -180,7 +201,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Bob_16x16_1: 1647417493
       Bob_16x16_0: 1028756397
+      Bob_16x16_2: -383187545
       Bob: 79626564
   spritePackingTag: 
   pSDRemoveMatte: 0
