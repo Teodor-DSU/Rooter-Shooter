@@ -161,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -186,10 +186,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerJumped: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
+  GotNewHost: {fileID: 11400000, guid: 9cb465cbf5d58a54a92f152410ce332e, type: 2}
+  LostBlood: {fileID: 11400000, guid: 5811bd081c7ff35448bf9457f859f43d, type: 2}
+  speed: 5
   explodesOnDeath: 0
   explosion: {fileID: 7121746451339064168, guid: 13346118b6f1c7f4bb477c7ac41eb183, type: 3}
-  speed: 5
+  maxBloodTank: 100
+  currentBlood: 0
+  reverseBloodLossRate: 0.1
   fadeAwayTime: 3
+  outOfBloodLastChanceTime: 5
 --- !u!50 &198872948429819765
 Rigidbody2D:
   serializedVersion: 4
@@ -446,11 +452,12 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   playerjumped: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
-  shootBlood: {fileID: 5114954983906158726}
+  shootEventLoseBlood: {fileID: 11400000, guid: 5811bd081c7ff35448bf9457f859f43d, type: 2}
+  shootBloodSplatterEffect: {fileID: 5114954983906158726}
   seed: {fileID: 4010482218315918602, guid: 6c8db71cb4e4ff947920b22708dd095d, type: 3}
   muzzle: {fileID: 198872949814079416}
   seedsPerShot: 1
-  ammunition: 10
+  shotBloodCost: 10
   spread: 0.2
   delayBetweenSeeds: 0
   cooldown: 0.2
