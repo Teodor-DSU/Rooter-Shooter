@@ -9,7 +9,6 @@ public class JumpSeed : MonoBehaviour
 {
     private static int EnemiesLayer = 7;
 
-    public static Transform Enemies = null;
 
     public Transform PlayerPrefab;
     
@@ -20,8 +19,7 @@ public class JumpSeed : MonoBehaviour
 
     private void Start()
     {
-        if (!Enemies)
-            Enemies = GameObject.Find("Enemies").transform;
+
     }
 
     // Update is called once per frame
@@ -52,7 +50,7 @@ public class JumpSeed : MonoBehaviour
         
         //TODO(Vasilis): Start rooting animation
         
-        foreach (Transform enemy in Enemies)
+        foreach (Transform enemy in MoveTowardsPlayer.Enemies)
         {
             MoveTowardsPlayer chase = enemy.GetComponent<MoveTowardsPlayer>();
             chase.ChangeChaseTarget(player);

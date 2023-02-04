@@ -11,12 +11,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private bool explodesOnDeath = false;
     [SerializeField] private GameObject explosion;
+    [SerializeField] private GameObject bloodSplatter;
     public float maxBloodTank = 100;
     [HideInInspector] public float currentBlood;
     [SerializeField] private float reverseBloodLossRate = 0.5f;
     [SerializeField] private float fadeAwayTime = 3f;
     [SerializeField] private float outOfBloodLastChanceTime = 5f;
 
+    private ShootSource ss;
     public static Transform ActivePlayer = null;
 
     private void Awake()
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        ss = GetComponentInChildren<ShootSource>();
         currentBlood = maxBloodTank;
         StartCoroutine(BleedOut());
         GotNewHost.RaiseEvent();
@@ -46,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
+        Instantiate(bloodSplatter, transform.position, transform.rotation);
         if (explodesOnDeath)
         {
             Instantiate(explosion, transform.position, transform.rotation);
@@ -54,6 +58,7 @@ public class PlayerController : MonoBehaviour
 
     private void TurnOff()
     {
+        gameObject.tag = "Untagged";
         this.enabled = false;
         StartCoroutine(FadeAway());
     }
@@ -86,7 +91,6 @@ public class PlayerController : MonoBehaviour
         {
             yield return new WaitForSeconds(reverseBloodLossRate);
             currentBlood--;
-            Debug.Log("drip, drip");
         }
 
         StartCoroutine(SlowlyDying());
@@ -94,6 +98,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator SlowlyDying()
     {
+        ss.enabled = false;
         yield return new WaitForSeconds(outOfBloodLastChanceTime);
         Debug.Log("You loose");
     }

@@ -8,6 +8,7 @@ public class AimAtMouse : MonoBehaviour
     public Transform JumpSeed;
 
     [SerializeField] private VoidEventChannelSO PlayerJumped;
+    [SerializeField] private VoidEventChannelSO JustShot;
     
     private Camera mainCam;
 
@@ -40,6 +41,7 @@ public class AimAtMouse : MonoBehaviour
             JumpSeed script = seed.GetComponent<JumpSeed>();
             script.SetDirection(jumpDir.normalized, jumpPower);
             PlayerJumped.RaiseEvent();
+            JustShot.RaiseEvent();
         }
         else if (Input.GetButton("Fire2"))
             ShowJumpAim();
