@@ -35,7 +35,7 @@ public class ShootSource : MonoBehaviour
             GameObject Seed = seed;
              var randSpreadX = Random.Range(-spread, spread);
              var randSpreadY = Random.Range(-spread, spread);
-             Seed.GetComponent<SeedTravel>().direction = new Vector3(transform.right.x + randSpreadX,
+             Seed.GetComponent<ShootSeed>().direction = new Vector3(transform.right.x + randSpreadX,
                  transform.right.y + randSpreadY, 0f);
              Instantiate(Seed, muzzle.transform.position, transform.rotation);
             yield return new WaitForSeconds(delayBetweenSeeds);
