@@ -27,8 +27,8 @@ public class ScrollTexture : MonoBehaviour
     {
         float posX = PlayerController.ActivePlayer.position.x;
         float offset = posX - oldPosition;
-        sprite.material.mainTextureOffset += new Vector2(Speed * offset, 0.0f) * Time.deltaTime;
         oldPosition = posX;
+        sprite.material.mainTextureOffset += new Vector2(Speed * offset, 0.0f) * Time.fixedDeltaTime;
 
         float dist = QuickDistance(camera.position, transform.position);
         if (dist >= 20.0f)
