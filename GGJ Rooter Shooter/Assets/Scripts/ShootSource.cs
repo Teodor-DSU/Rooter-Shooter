@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class ShootSource : MonoBehaviour
 {
+    [SerializeField] private UnityEvent shake;
     [SerializeField] private VoidEventChannelSO playerjumped;
     [SerializeField] private ParticleSystem shootBlood;
     [SerializeField] private GameObject seed;
@@ -46,17 +48,23 @@ public class ShootSource : MonoBehaviour
         canFire = false;
         for (int i = 0; i < seedsPerShot; i++)
         {
-            GameObject Seed = seed;
-             var randSpreadX = Random.Range(-spread, spread);
-             var randSpreadY = Random.Range(-spread, spread);
-             Seed.GetComponent<ShootSeed>().direction = new Vector3(transform.right.x + randSpreadX,
-                 transform.right.y + randSpreadY, 0f);
-             Instantiate(Seed, muzzle.transform.position, transform.rotation);
+            ShootSeed();
             yield return new WaitForSeconds(delayBetweenSeeds);
         }
         shootBlood.Play();
         yield return new WaitForSeconds(cooldown);
         canFire = true;
+    }
+
+    public void ShootSeed()
+    {
+        GameObject Seed = seed;
+        var randSpreadX = Random.Range(-spread, spread);
+        var randSpreadY = Random.Range(-spread, spread);
+        Seed.GetComponent<ShootSeed>().direction = new Vector3(transform.right.x + randSpreadX,
+            transform.right.y + randSpreadY, 0f);
+        Instantiate(Seed, muzzle.transform.position, transform.rotation);
+        shake.Invoke();
     }
 
     private void DisableSelf()
