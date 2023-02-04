@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < amountInBatch; i++)
         {
             int chosenEnemy = Random.Range(0, enemies.Count);
-            Instantiate(enemies[chosenEnemy], spawnPoints[currentSpawnPoint].transform.position, Quaternion.identity, JumpSeed.Enemies);
+            Instantiate(enemies[chosenEnemy], spawnPoints[currentSpawnPoint].transform.position, Quaternion.identity, MoveTowardsPlayer.Enemies);
             NextSpawnPoint();
         }
         yield return new WaitForSeconds(timeBetweenSpawn);

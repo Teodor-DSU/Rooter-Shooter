@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 4010482218315918602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.13, y: 0.64, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.25}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9433962, g: 0.7008952, b: 0.31594875, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 73d84a9337c29f444ad8e7c4b24c54f0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,9 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda53deb38c4edf44adc9cef828338ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shake:
+    m_PersistentCalls:
+      m_Calls: []
   speed: 5
+  damage: 2
   lifetime: 3
-  direction: {x: 0.87328494, y: 0.37744576, z: 0}
+  direction: {x: 1.0776086, y: -0.15781008, z: 0}
 --- !u!50 &-3853779265761829901
 Rigidbody2D:
   serializedVersion: 4
@@ -136,6 +140,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.018683195, y: 0}
   serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Radius: 0.1480062

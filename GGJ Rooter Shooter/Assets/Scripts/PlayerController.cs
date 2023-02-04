@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
     private void TurnOff()
     {
+        gameObject.tag = "Untagged";
         this.enabled = false;
         StartCoroutine(FadeAway());
     }
