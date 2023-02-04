@@ -22,7 +22,7 @@ public class MoveTowardsPlayer : MonoBehaviour
         if (player)
         {
             direction = (player.position - transform.position).normalized;
-            transform.position += direction * (speed * Time.deltaTime);
+            transform.position += direction * (speed * Time.fixedDeltaTime);
         }
     }
 

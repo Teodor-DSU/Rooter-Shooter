@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -45,6 +46,10 @@ public class JumpSeed : MonoBehaviour
 
         Transform player = Instantiate(PlayerPrefab, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
         PlayerController.ActivePlayer = player;
+        
+        CinemachineVirtualCamera cinemachine = Camera.main.GetComponentInChildren<CinemachineVirtualCamera>();
+        cinemachine.Follow = player;
+        
         //TODO(Vasilis): Start rooting animation
         
         foreach (Transform enemy in Enemies)
