@@ -487,6 +487,17 @@ Transform:
   m_Father: {fileID: 1901852218}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &492885536 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 492885536, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
+  m_PrefabInstance: {fileID: 198872949336946813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &499583537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,6 +1783,9 @@ MonoBehaviour:
   health: 10
   damage: 20
   loseBlood: {fileID: 0}
+  bloodSplatter: {fileID: 0}
+  timeTillVanish: 3
+  controllable: 0
 --- !u!1 &1343097951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,6 +2591,38 @@ PrefabInstance:
     - target: {fileID: 198872948429819774, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 198872949295423701, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
+      propertyPath: seedsPerShot
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 198872949295423706, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
+      propertyPath: shake.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198872949295423706, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
+      propertyPath: shake.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198872949295423706, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
+      propertyPath: shake.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 492885536}
+    - target: {fileID: 198872949295423706, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
+      propertyPath: shake.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198872949295423706, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
+      propertyPath: shake.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GenerateImpulse
+      objectReference: {fileID: 0}
+    - target: {fileID: 198872949295423706, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
+      propertyPath: shake.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Cinemachine.CinemachineImpulseSource, Cinemachine
+      objectReference: {fileID: 0}
+    - target: {fileID: 198872949295423706, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
+      propertyPath: shake.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
