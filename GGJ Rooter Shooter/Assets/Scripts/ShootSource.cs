@@ -66,6 +66,9 @@ public class ShootSource : MonoBehaviour
         shootBloodSplatterEffect.Play();
         shake.Invoke();
         justShot.RaiseEvent();
+
+        AudioSource source = transform.GetComponent<AudioSource>();
+        source.Play();
     }
 
     private void DisableSelf()
