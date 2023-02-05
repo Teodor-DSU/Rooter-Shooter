@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
     
     private void OnDestroy()
     {
-        if (!isQuitting)
+        if (!isQuitting && gameObject.scene.isLoaded)
         {
             Instantiate(bloodSplatter, transform.position, transform.rotation);
         }
