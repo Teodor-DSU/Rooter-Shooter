@@ -14,6 +14,9 @@ public class SpawnersFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!PlayerController.ActivePlayer)
+            return;
+        
         Transform target = PlayerController.ActivePlayer;
         transform.position = new Vector3(target.position.x + offsetX, transform.position.y, 0.0f);
     }

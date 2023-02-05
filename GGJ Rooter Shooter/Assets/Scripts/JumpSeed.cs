@@ -1,12 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Cinemachine;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class JumpSeed : MonoBehaviour
 {
+    [SerializeField] private UnityEvent loseGame;
     private static int EnemiesLayer = 7;
     
     public Transform PlayerPrefab;
@@ -37,7 +35,7 @@ public class JumpSeed : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            loseGame.Invoke();
         }
     }
 
