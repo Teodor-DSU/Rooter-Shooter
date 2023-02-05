@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startedDying: {fileID: 11400000, guid: 000de2d1c29768844942c2c08d1c441c, type: 2}
   gotNewHost: {fileID: 11400000, guid: 9cb465cbf5d58a54a92f152410ce332e, type: 2}
-  secondsTilGameOver: 5
+  secondsTilDie: 5
   textObject: {fileID: 2035822662}
 --- !u!1 &1104721471
 GameObject:
@@ -2225,7 +2225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696783513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 515.4599, y: 271.41782, z: -1.3329206}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
