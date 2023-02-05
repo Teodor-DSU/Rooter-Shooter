@@ -25,6 +25,8 @@ public class ScrollTexture : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!PlayerController.ActivePlayer)
+            return;
         float posX = PlayerController.ActivePlayer.position.x;
         float offset = posX - oldPosition;
         oldPosition = posX;

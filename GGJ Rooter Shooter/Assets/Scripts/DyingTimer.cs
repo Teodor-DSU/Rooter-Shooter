@@ -54,5 +54,10 @@ public class DyingTimer : MonoBehaviour
             currentTime--;
             text.text = currentTime.ToString();
         }
+
+        if (currentTime <= 0)
+        {
+            textObject.SetActive(false);
+        }
     }
 }
