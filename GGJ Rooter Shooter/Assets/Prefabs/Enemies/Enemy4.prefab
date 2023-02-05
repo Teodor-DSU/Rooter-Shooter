@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 70612414324988496}
   - component: {fileID: -3001556812729743941}
   m_Layer: 7
-  m_Name: Enemy3
+  m_Name: Enemy4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 8162f7a723be44349a157e8230c1ef6a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 312b9617ad664ff42811cb962dacf449, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +105,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.49, y: 5.93}
+    oldSize: {x: 9.71, y: 10.91}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea18a45364eeb33478cdf37fcc9c45d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   playerJumped: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
 --- !u!114 &-3001556812729743941
 MonoBehaviour:
@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59dee5e25b6295945bf52d13d5ac20cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 8
-  damage: 15
+  health: 15
+  damage: 20
   loseBlood: {fileID: 11400000, guid: 5811bd081c7ff35448bf9457f859f43d, type: 2}
   bloodSplatter: {fileID: 4782479230443389977, guid: 58a80ca57084142408974088ef14cb2a, type: 3}
   timeTillVanish: 3
