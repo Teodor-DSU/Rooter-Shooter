@@ -20,13 +20,12 @@ public class AlienManager : MonoBehaviour
     {
         if (enemiesKilled.Value >= killsTilAlien && !alienSpawned)
         {
-            Debug.Log("Yohoo! Mama's home!");
             alienSpawned = true;
             
-            /*foreach (Transform spot in alienSpawnPoints)
+            foreach (Transform spot in alienSpawnPoints)
             {
                 Instantiate(alien, spot.position, spot.rotation);
-            }*/
+            }
         }
     }
 }
