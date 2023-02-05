@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesKilled: {fileID: 11400000, guid: 6ddcec6001e2ecc4b88baf1e65e0b092, type: 2}
   killsTilAlien: 3
-  alien: {fileID: 3292657232905311937, guid: 0d761812d3a6ba747897bfa2ad402a07, type: 3}
+  alien: {fileID: 3292657232905311937, guid: afce84f978e9e6e47935f0bb46668aac, type: 3}
   alienSpawnPoints:
   - {fileID: 243506262}
   - {fileID: 357650324}
