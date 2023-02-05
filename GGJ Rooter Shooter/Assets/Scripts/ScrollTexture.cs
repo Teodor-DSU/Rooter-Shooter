@@ -25,20 +25,17 @@ public class ScrollTexture : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (PlayerController.ActivePlayer)
-        {
-            float posX = PlayerController.ActivePlayer.position.x;
-            float offset = posX - oldPosition;
-            oldPosition = posX;
-            sprite.material.mainTextureOffset += new Vector2(Speed * offset, 0.0f) * Time.fixedDeltaTime;
-    
-            float dist = QuickDistance(camera.position, transform.position);
-            if (dist >= 20.0f)
-                transform.position += travelDistance;
-            else if (dist <= -20.0f)
-                transform.position -= travelDistance;
-            //transform.position = new Vector3(camera.position.x + offsetX, transform.position.y, 0.0f);
-        }
+        float posX = PlayerController.ActivePlayer.position.x;
+        float offset = posX - oldPosition;
+        oldPosition = posX;
+        sprite.material.mainTextureOffset += new Vector2(Speed * offset, 0.0f) * Time.fixedDeltaTime;
+
+        float dist = QuickDistance(camera.position, transform.position);
+        if (dist >= 20.0f)
+            transform.position += travelDistance;
+        else if (dist <= -20.0f)
+            transform.position -= travelDistance;
+        //transform.position = new Vector3(camera.position.x + offsetX, transform.position.y, 0.0f);
     }
 
     private float QuickDistance(Vector3 pos0, Vector3 pos1) { return pos0.x - pos1.x; }
