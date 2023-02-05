@@ -10,10 +10,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private FloatEventChannelSO loseBlood;
     [SerializeField] private GameObject bloodSplatter;
     [SerializeField] private float timeTillVanish = 3f;
-    [HideInInspector] public bool controllable = false;
     [SerializeField] private Color controllableColor = Color.red;
     [SerializeField] private IntVariableSO enemiesKilled;
-
+    public Transform playerToSpawn;
+    
+    [HideInInspector] public bool controllable = false;
     private SpriteRenderer sr;
     private bool canHurt = true;
     private MoveTowardsPlayer moveScript;

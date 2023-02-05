@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3052936206778641923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.62, y: 2.13, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4325374, y: 0.4325374, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.15, y: -0.43}
+  m_Offset: {x: -0.34306073, y: -0.20588148}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -112,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.69, y: 4.12}
+  m_Size: {x: 2.9749455, y: 4.5682373}
   m_EdgeRadius: 0
 --- !u!50 &7916968069910170659
 Rigidbody2D:
@@ -166,6 +166,7 @@ MonoBehaviour:
   loseBlood: {fileID: 11400000, guid: 5811bd081c7ff35448bf9457f859f43d, type: 2}
   bloodSplatter: {fileID: 4782479230443389977, guid: 58a80ca57084142408974088ef14cb2a, type: 3}
   timeTillVanish: 3
-  controllable: 0
   controllableColor: {r: 1, g: 0, b: 0, a: 1}
   enemiesKilled: {fileID: 11400000, guid: 6ddcec6001e2ecc4b88baf1e65e0b092, type: 2}
+  playerToSpawn: {fileID: 198872948429819768, guid: 436de1d1fc7cd8e4181c38753040d2a6, type: 3}
+  controllable: 0

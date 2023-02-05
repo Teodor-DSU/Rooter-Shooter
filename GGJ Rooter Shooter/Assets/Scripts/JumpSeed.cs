@@ -54,6 +54,7 @@ public class JumpSeed : MonoBehaviour
             if (enemyScript.controllable && !hasSpawned)
             {
                 Destroy(gameObject);
+                PlayerPrefab = enemyScript.playerToSpawn;
                 Destroy(collision.gameObject);
         
                 Transform player = Instantiate(PlayerPrefab, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));

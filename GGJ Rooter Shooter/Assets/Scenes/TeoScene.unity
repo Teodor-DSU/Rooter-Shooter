@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesKilled: {fileID: 11400000, guid: 6ddcec6001e2ecc4b88baf1e65e0b092, type: 2}
   killsTilAlien: 3
-  alien: {fileID: 3292657232905311937, guid: 93d289d9cbcc82143a15e4934d33cf2d, type: 3}
+  alien: {fileID: 3292657232905311937, guid: 0d761812d3a6ba747897bfa2ad402a07, type: 3}
   alienSpawnPoints:
   - {fileID: 243506262}
   - {fileID: 357650324}
@@ -1974,9 +1974,10 @@ MonoBehaviour:
   loseBlood: {fileID: 0}
   bloodSplatter: {fileID: 0}
   timeTillVanish: 3
-  controllable: 0
   controllableColor: {r: 1, g: 0, b: 0, a: 1}
   enemiesKilled: {fileID: 0}
+  playerToSpawn: {fileID: 0}
+  controllable: 0
 --- !u!1 &1343097951
 GameObject:
   m_ObjectHideFlags: 0
