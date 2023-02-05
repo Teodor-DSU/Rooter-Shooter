@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private IntVariableSO enemiesKilled;
     [SerializeField] private VoidEventChannelSO PlayerJumped;
     [SerializeField] private VoidEventChannelSO GotNewHost;
     [SerializeField] private FloatEventChannelSO LostBlood;
@@ -77,6 +78,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator FadeAway()
     {
         yield return new WaitForSeconds(fadeAwayTime);
+        enemiesKilled.Value++;
         Destroy(gameObject);
     }
 

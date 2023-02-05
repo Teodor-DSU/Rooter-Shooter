@@ -234,6 +234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExplosionParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 2537110115365785175, guid: f5caece77808d17419cd50738b1b622f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32792c62932541e47a9274866ad5055c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5caece77808d17419cd50738b1b622f, type: 3}
 --- !u!4 &2537110115072753734 stripped

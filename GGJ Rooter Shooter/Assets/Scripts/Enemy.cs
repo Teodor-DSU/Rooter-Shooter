@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject bloodSplatter;
     [SerializeField] private float timeTillVanish = 3f;
     [HideInInspector] public bool controllable = false;
+    [SerializeField] private IntVariableSO enemiesKilled;
 
     private bool canHurt = true;
     private MoveTowardsPlayer moveScript;
@@ -28,6 +29,7 @@ public class Enemy : MonoBehaviour
         {
             moveScript.enabled = false;
             controllable = true;
+            StartCoroutine(Die());
         }
     }
 
@@ -55,6 +57,7 @@ public class Enemy : MonoBehaviour
     private IEnumerator Die()
     {
         yield return new WaitForSeconds(timeTillVanish);
+        enemiesKilled.Value++;
         Destroy(gameObject);
     }
 }
