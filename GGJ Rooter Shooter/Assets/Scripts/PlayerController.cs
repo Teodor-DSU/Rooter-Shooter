@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (!isQuitting)
+        if (!isQuitting && gameObject.scene.isLoaded)
         {
             Instantiate(bloodSplatter, transform.position, transform.rotation);
             if (explodesOnDeath)

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DavidScene.unity
     guid: 225e4f7a8f342f84298436a27a36cf14
+  - enabled: 1
+    path: Assets/Scenes/MenuScenes/LoseScene.unity
+    guid: 2e202372f853c4b41b2ddd1a64be6363
   m_configObjects: {}

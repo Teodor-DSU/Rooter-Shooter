@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class JumpSeed : MonoBehaviour
 {
+    [SerializeField] private UnityEvent endGame;
     private static int EnemiesLayer = 7;
     
     public Transform PlayerPrefab;
@@ -18,12 +20,6 @@ public class JumpSeed : MonoBehaviour
 
     private bool hasSpawned = false;
 
-    private void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         transform.position += power * Time.fixedDeltaTime * direction;
@@ -37,7 +33,7 @@ public class JumpSeed : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            endGame.Invoke();
         }
     }
 
