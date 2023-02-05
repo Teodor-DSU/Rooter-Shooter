@@ -1225,7 +1225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySounds: {fileID: 981479044}
   hoverSound: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
-  clickSound: {fileID: 8300000, guid: dc6614beca09347ec9b258f12d154bdd, type: 3}
+  clickSound: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
 --- !u!82 &981479044
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2190,7 +2190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySounds: {fileID: 1636348709}
   hoverSound: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
-  clickSound: {fileID: 8300000, guid: dc6614beca09347ec9b258f12d154bdd, type: 3}
+  clickSound: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
 --- !u!82 &1636348709
 AudioSource:
   m_ObjectHideFlags: 0
