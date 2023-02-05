@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6724625601993005292}
   - component: {fileID: 2819810451975333790}
   - component: {fileID: 1566945005119673691}
-  - component: {fileID: 8584980023561587537}
   m_Layer: 0
   m_Name: JumpSeed
   m_TagString: Untagged
@@ -100,21 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c4f62308b16f54ab39b5746dce3c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endGame:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8584980023561587537}
-        m_TargetAssemblyTypeName: SceneBehaviour, Assembly-CSharp
-        m_MethodName: LoadNewScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: LoseScene
-          m_BoolArgument: 0
-        m_CallState: 2
   PlayerPrefab: {fileID: 198872948429819768, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
   Limits: {x: 4, y: 7}
 --- !u!50 &2819810451975333790
@@ -154,15 +138,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0.15793975, y: 0.0046447036}
   m_Size: {x: 1.315885, y: 0.72762495}
   m_Direction: 1
---- !u!114 &8584980023561587537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2583835061929588821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6162f2d03e25a784d8443a9b181297d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
