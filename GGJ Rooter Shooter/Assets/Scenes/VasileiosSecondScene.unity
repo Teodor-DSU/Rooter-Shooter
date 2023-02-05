@@ -154,8 +154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesKilled: {fileID: 11400000, guid: 6ddcec6001e2ecc4b88baf1e65e0b092, type: 2}
   killsTilAlien: 3
-  alien: {fileID: 0}
-  alienSpawnPoints: []
+  alien: {fileID: 3292657232905311937, guid: 4001c1a50aad70c4198736c3dfc6e38b, type: 3}
+  alienSpawnPoints:
+  - {fileID: 166778182}
+  - {fileID: 1440102351}
 --- !u!4 &8045012
 Transform:
   m_ObjectHideFlags: 0
@@ -254,6 +256,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &166778180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 166778182}
+  - component: {fileID: 166778181}
+  m_Layer: 0
+  m_Name: AlienSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &166778181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166778180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a3643ae78912a43b8e995e611e81a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &166778182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166778180}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15, y: -1.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &193600389
 GameObject:
@@ -499,6 +545,7 @@ GameObject:
   - component: {fileID: 297015342}
   - component: {fileID: 297015341}
   - component: {fileID: 297015340}
+  - component: {fileID: 297015343}
   m_Layer: 0
   m_Name: Border (1)
   m_TagString: Untagged
@@ -568,6 +615,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &297015343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297015339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b236662da7f1cc349ba9fbad962fe729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &387528108
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,6 +924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 560655683}
   - component: {fileID: 560655682}
+  - component: {fileID: 560655684}
   m_Layer: 0
   m_Name: EnemySpawner (1)
   m_TagString: Untagged
@@ -924,6 +984,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &560655684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560655681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a3643ae78912a43b8e995e611e81a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &636972985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,6 +2385,50 @@ Transform:
   m_Father: {fileID: 560655683}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1440102349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1440102351}
+  - component: {fileID: 1440102350}
+  m_Layer: 0
+  m_Name: AlienSpawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1440102350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440102349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a3643ae78912a43b8e995e611e81a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1440102351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440102349}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15, y: -1.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1513207555 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 198872948429819774, guid: 50f5bab88ba02044ca6cb7e2ff2c44cf, type: 3}
@@ -2640,6 +2756,7 @@ GameObject:
   - component: {fileID: 1776391835}
   - component: {fileID: 1776391834}
   - component: {fileID: 1776391833}
+  - component: {fileID: 1776391836}
   m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
@@ -2709,6 +2826,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776391836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776391832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b236662da7f1cc349ba9fbad962fe729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1901852217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,6 +2848,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1901852218}
   - component: {fileID: 1901852219}
+  - component: {fileID: 1901852220}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -2778,6 +2908,18 @@ MonoBehaviour:
   - {fileID: 448899499}
   timeBetweenSpawn: 9
   amountInBatch: 3
+--- !u!114 &1901852220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901852217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a3643ae78912a43b8e995e611e81a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1906235065
 GameObject:
   m_ObjectHideFlags: 0
