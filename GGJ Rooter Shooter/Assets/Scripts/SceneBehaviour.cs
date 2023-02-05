@@ -8,12 +8,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneBehaviour : MonoBehaviour
 {
-    private void LoadNewScene(string scenename)
+    public void LoadNewScene(string scenename)
     {
         SceneManager.LoadScene(scenename);
     }
 
-    private void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
