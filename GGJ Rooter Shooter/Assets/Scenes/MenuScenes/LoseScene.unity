@@ -1696,7 +1696,7 @@ GameObject:
   - component: {fileID: 2020484401}
   - component: {fileID: 2020484400}
   m_Layer: 5
-  m_Name: Mama
+  m_Name: DedPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1711,7 +1711,7 @@ RectTransform:
   m_GameObject: {fileID: 2020484398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4154, y: 1.4154, z: 1.4154}
+  m_LocalScale: {x: 1.0150825, y: 1.0150825, z: 1.0150825}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 464228823}
