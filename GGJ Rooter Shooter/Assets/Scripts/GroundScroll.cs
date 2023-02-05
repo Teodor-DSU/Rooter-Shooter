@@ -25,7 +25,7 @@ public class GroundScroll : MonoBehaviour
         float posX = PlayerController.ActivePlayer.position.x;
         float offset = posX - oldPosition;
         oldPosition = posX;
-        sprite.material.mainTextureOffset -= new Vector2(0.0f, Speed * offset) * Time.fixedDeltaTime;
+        sprite.material.mainTextureOffset -= new Vector2(Speed * offset, 0.0f) * Time.fixedDeltaTime;
 
         transform.position += new Vector3(offset, 0.0f, 0.0f);
     }
