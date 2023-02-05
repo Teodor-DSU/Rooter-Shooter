@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea18a45364eeb33478cdf37fcc9c45d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   playerJumped: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
 --- !u!114 &4930169866694349470
 MonoBehaviour:
@@ -162,9 +162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  damage: 20
+  damage: 25
   loseBlood: {fileID: 11400000, guid: 5811bd081c7ff35448bf9457f859f43d, type: 2}
   bloodSplatter: {fileID: 4782479230443389977, guid: 58a80ca57084142408974088ef14cb2a, type: 3}
   timeTillVanish: 3
   controllable: 0
+  controllableColor: {r: 1, g: 0, b: 0, a: 1}
   enemiesKilled: {fileID: 11400000, guid: 6ddcec6001e2ecc4b88baf1e65e0b092, type: 2}
