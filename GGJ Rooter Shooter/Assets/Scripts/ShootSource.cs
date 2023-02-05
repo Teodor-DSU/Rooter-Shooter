@@ -49,6 +49,7 @@ public class ShootSource : MonoBehaviour
             ShootSeed();
             yield return new WaitForSeconds(delayBetweenSeeds);
         }
+        shootEventLoseBlood.RaiseEvent(shotBloodCost);
         shootBloodSplatterEffect.Play();
         yield return new WaitForSeconds(cooldown);
         canFire = true;
@@ -64,7 +65,6 @@ public class ShootSource : MonoBehaviour
             transform.right.y + randSpreadY, 0f);
         Instantiate(Seed, muzzle.transform.position, transform.rotation);
         shake.Invoke();
-        shootEventLoseBlood.RaiseEvent(shotBloodCost);
         justShot.RaiseEvent();
     }
 

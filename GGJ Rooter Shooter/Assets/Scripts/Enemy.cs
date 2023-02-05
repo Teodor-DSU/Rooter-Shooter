@@ -11,13 +11,17 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject bloodSplatter;
     [SerializeField] private float timeTillVanish = 3f;
     [HideInInspector] public bool controllable = false;
+    [SerializeField] private Color controllableColor = Color.red;
     [SerializeField] private IntVariableSO enemiesKilled;
 
+    private SpriteRenderer sr;
     private bool canHurt = true;
     private MoveTowardsPlayer moveScript;
+    private bool isQuitting = false;
     
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         moveScript = GetComponent<MoveTowardsPlayer>();
     }
     
@@ -27,15 +31,24 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            sr.color = controllableColor;
             moveScript.enabled = false;
             controllable = true;
             StartCoroutine(Die());
         }
     }
 
+    private void OnApplicationQuit()
+    {
+        isQuitting = true;
+    }
+    
     private void OnDestroy()
     {
-        Instantiate(bloodSplatter, transform.position, transform.rotation);
+        if (!isQuitting)
+        {
+            Instantiate(bloodSplatter, transform.position, transform.rotation);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col)

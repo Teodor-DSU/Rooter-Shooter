@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private UnityEvent LoadEndScene;
     [SerializeField] private IntVariableSO enemiesKilled;
     [SerializeField] private VoidEventChannelSO PlayerJumped;
     [SerializeField] private VoidEventChannelSO GotNewHost;
+    [SerializeField] private VoidEventChannelSO StartedDying;
     [SerializeField] private FloatEventChannelSO LostBlood;
     [SerializeField] private float speed = 5f;
     [SerializeField] private bool explodesOnDeath = false;
@@ -18,9 +21,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float reverseBloodLossRate = 0.5f;
     [SerializeField] private float fadeAwayTime = 3f;
     [SerializeField] private float outOfBloodLastChanceTime = 5f;
+    [SerializeField] private Color lastChanceColor = Color.red;
 
+    private SpriteRenderer sr;
     private ShootSource ss;
     public static Transform ActivePlayer = null;
+    private bool isQuitting = false;
 
     private void Awake()
     {
@@ -30,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         ss = GetComponentInChildren<ShootSource>();
         currentBlood = maxBloodTank;
         StartCoroutine(BleedOut());
@@ -48,20 +55,28 @@ public class PlayerController : MonoBehaviour
         LostBlood.OnEventRaised -= LoseBlood;
     }
 
+    private void OnApplicationQuit()
+    {
+        isQuitting = true;
+    }
+
     private void OnDestroy()
     {
-        Instantiate(bloodSplatter, transform.position, transform.rotation);
-        if (explodesOnDeath)
+        if (!isQuitting)
         {
-            Instantiate(explosion, transform.position, transform.rotation);
+            Instantiate(bloodSplatter, transform.position, transform.rotation);
+            if (explodesOnDeath)
+            {
+                Instantiate(explosion, transform.position, transform.rotation);
+            }
         }
     }
 
     private void TurnOff()
     {
         gameObject.tag = "Untagged";
-        this.enabled = false;
         StartCoroutine(FadeAway());
+        enabled = false;
     }
 
     // Update is called once per frame
@@ -100,8 +115,11 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator SlowlyDying()
     {
+        StartedDying.RaiseEvent();
         ss.enabled = false;
+        sr.color = lastChanceColor;
         yield return new WaitForSeconds(outOfBloodLastChanceTime);
         Debug.Log("You loose");
+        LoadEndScene.Invoke();
     }
 }

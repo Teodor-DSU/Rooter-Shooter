@@ -167,3 +167,4 @@ MonoBehaviour:
   bloodSplatter: {fileID: 4782479230443389977, guid: 58a80ca57084142408974088ef14cb2a, type: 3}
   timeTillVanish: 3
   controllable: 0
+  enemiesKilled: {fileID: 11400000, guid: 6ddcec6001e2ecc4b88baf1e65e0b092, type: 2}

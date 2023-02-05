@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 198872948429819771}
   - component: {fileID: 198872948429819765}
   - component: {fileID: 198872948429819770}
+  - component: {fileID: 198872949336946819}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -185,11 +186,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6df0e4045e6734685470c668679404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LoadEndScene:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 198872949336946819}
+        m_TargetAssemblyTypeName: SceneBehaviour, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: GameOver
+          m_BoolArgument: 0
+        m_CallState: 2
+  enemiesKilled: {fileID: 11400000, guid: 6ddcec6001e2ecc4b88baf1e65e0b092, type: 2}
   PlayerJumped: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
   GotNewHost: {fileID: 11400000, guid: 9cb465cbf5d58a54a92f152410ce332e, type: 2}
+  StartedDying: {fileID: 11400000, guid: 000de2d1c29768844942c2c08d1c441c, type: 2}
   LostBlood: {fileID: 11400000, guid: 5811bd081c7ff35448bf9457f859f43d, type: 2}
   speed: 5
-  explodesOnDeath: 0
+  explodesOnDeath: 1
   explosion: {fileID: 7121746451339064168, guid: 13346118b6f1c7f4bb477c7ac41eb183, type: 3}
   bloodSplatter: {fileID: 4782479230443389977, guid: 58a80ca57084142408974088ef14cb2a, type: 3}
   maxBloodTank: 100
@@ -197,6 +215,7 @@ MonoBehaviour:
   reverseBloodLossRate: 0.1
   fadeAwayTime: 3
   outOfBloodLastChanceTime: 5
+  lastChanceColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!50 &198872948429819765
 Rigidbody2D:
   serializedVersion: 4
@@ -244,6 +263,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &198872949336946819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198872948429819774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6162f2d03e25a784d8443a9b181297d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &198872948438017864
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +454,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99371489d8d0c474283bdea49df930a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shake:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 492885536}
+        m_TargetAssemblyTypeName: Cinemachine.CinemachineImpulseSource, Cinemachine
+        m_MethodName: GenerateImpulse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   JumpSeed: {fileID: 1319541634061971978, guid: e872d30da7e21a14aa8ac56032daa767, type: 3}
   PlayerJumped: {fileID: 11400000, guid: 4d1cd29e5d9972f409a9440024dd0355, type: 2}
   JustShot: {fileID: 11400000, guid: 726ae223f8516ea4f970ecc9c2b3bbb8, type: 2}
@@ -460,7 +506,7 @@ MonoBehaviour:
   shootBloodSplatterEffect: {fileID: 5114954983906158726}
   seed: {fileID: 4010482218315918602, guid: 6c8db71cb4e4ff947920b22708dd095d, type: 3}
   muzzle: {fileID: 198872949814079416}
-  seedsPerShot: 1
+  seedsPerShot: 10
   shotBloodCost: 10
   spread: 0.2
   delayBetweenSeeds: 0
