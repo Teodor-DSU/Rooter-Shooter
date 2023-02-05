@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpwnFollow : MonoBehaviour
+public class SpawnersFollow : MonoBehaviour
 {
     private float offsetX;
     // Start is called before the first frame update
